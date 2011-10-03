@@ -1,5 +1,5 @@
 import sys, traceback, Ice
-from generated import Demo
+import Demo
 
 class PrinterI(Demo.Printer):
     def printString(self, s, current=None):
