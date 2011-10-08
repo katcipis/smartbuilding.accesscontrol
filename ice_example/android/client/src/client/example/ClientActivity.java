@@ -20,13 +20,11 @@ public class ClientActivity extends Activity {
 	        //Lets do basic ICE stuff
 	        Ice.Communicator ic = null;
 	        try {
-	        	String host = "192.168.10.3";
-	        	
 	        	log.append("Initializing ICE\n");
 	            ic = Ice.Util.initialize();
 	            log.append("Initialized ICE, creating Object proxy\n");
 	            
-	            Ice.ObjectPrx base = ic.stringToProxy("SimplePrinter:tcp " + host + " -p 10000");
+	            Ice.ObjectPrx base = ic.stringToProxy("SimplePrinter:default -p 10000");
 	            log.append("Created Object proxy, casting to Printer proxy\n");
 	            
 	            Demo.PrinterPrx printer = Demo.PrinterPrxHelper.checkedCast(base);
