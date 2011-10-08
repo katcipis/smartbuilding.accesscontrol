@@ -9,7 +9,7 @@ status = 0
 ic = None
 try:
     ic = Ice.initialize(sys.argv)
-    adapter = ic.createObjectAdapterWithEndpoints("SimplePrinterAdapter", "default -p 10000")
+    adapter = ic.createObjectAdapterWithEndpoints("SimplePrinterAdapter", "tcp -p 10000:udp -p 10000")
     object = PrinterI()
     adapter.add(object, ic.stringToIdentity("SimplePrinter"))
     adapter.activate()

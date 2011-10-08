@@ -16,6 +16,48 @@ public class ClientActivity extends Activity {
 	    	// Capture our edit text from layout
 	        EditText log = (EditText) findViewById(R.id.log);
 	        log.append("Lets call the printer class !!!\n");
+	        
+	        //Lets do basic ICE stuff
+	        Ice.Communicator ic = null;
+	        try {
+	        	String host = "192.168.10.3";
+	        	
+	        	log.append("Initializing ICE\n");
+	            ic = Ice.Util.initialize();
+	            log.append("Initialized ICE, creating Object proxy\n");
+	            
+	            Ice.ObjectPrx base = ic.stringToProxy("SimplePrinter:tcp " + host + " -p 10000");
+	            log.append("Created Object proxy, casting to Printer proxy\n");
+	            
+	            Demo.PrinterPrx printer = Demo.PrinterPrxHelper.checkedCast(base);
+	            log.append("Casted to Printer proxy\n");
+	            
+	            if (printer == null) {
+	            	log.append("Cast to Printer proxy FAILED\n");
+	                throw new Error("Invalid proxy");
+	            }
+
+	            log.append("Cast to Printer proxy SUCCESS, calling method\n");
+	            printer.printString("Hello World from Android !!!");
+	            
+	        } catch (Ice.LocalException e) {
+	            e.printStackTrace();
+	            log.append("EXCEPTION: " + e.getMessage());
+	        } catch (Exception e) {
+	            System.err.println(e.getMessage());
+	            log.append("EXCEPTION: " + e.getMessage());
+	        }
+	        if (ic != null) {
+	            // Clean up
+	            try {
+	            	log.append(" Destroying ic\n");
+	                ic.destroy();
+	            } catch (Exception e) {
+	                System.err.println(e.getMessage());
+	                log.append("EXCEPTION: " + e.getMessage());
+	            }
+	        }
+
 	    }
 	};
 

@@ -3,9 +3,14 @@ import Demo
 
 status = 0
 ic = None
+
+if len(sys.argv) < 2:
+    print ("Usage: {0} <server ip>".format(sys.argv[0]))
+    exit()
+
 try:
     ic = Ice.initialize(sys.argv)
-    base = ic.stringToProxy("SimplePrinter:default -p 10000")
+    base = ic.stringToProxy("SimplePrinter:tcp -h " + sys.argv[1] + " -p 10000")
     printer = Demo.PrinterPrx.checkedCast(base)
     if not printer:
         raise RuntimeError("Invalid proxy")
@@ -23,5 +28,5 @@ if ic:
         traceback.print_exc()
         status = 1
 
-sys.exit(status)
+exit(status)
 
