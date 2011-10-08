@@ -650,3 +650,15 @@ org.eclipse.core.internal.resources.ResourceException: A resource already exists
 !MESSAGE A resource already exists on disk '/home/katz/workspace/smartgrid/ice_example/android/library/generated'.
 !SUBENTRY 1 org.eclipse.core.resources 4 272 2011-10-07 23:16:12.370
 !MESSAGE A resource already exists on disk '/home/katz/workspace/smartgrid/ice_example/android/library/generated'.
+!SESSION 2011-10-07 23:24:03.909 -----------------------------------------------
+eclipse.buildId=I20110613-1736
+java.version=1.6.0_26
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=pt_BR
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2011-10-07 23:24:38.478
+!MESSAGE Failed to load properties file for project 'client'
+
+!ENTRY org.eclipse.ui 4 4 2011-10-07 23:24:41.187
+!MESSAGE Invalid preference page path: XML Syntax
