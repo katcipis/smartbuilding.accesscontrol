@@ -24,7 +24,8 @@ public class ClientActivity extends Activity {
 	            ic = Ice.Util.initialize();
 	            log.append("Initialized ICE, creating Object proxy\n");
 	            
-	            Ice.ObjectPrx base = ic.stringToProxy("SimplePrinter:default -p 10000");
+	            //Special alias to your host loopback interface (i.e., 127.0.0.1 on your development machine)
+	            Ice.ObjectPrx base = ic.stringToProxy("SimplePrinter:tcp -h 10.0.2.2 -p 10000");
 	            log.append("Created Object proxy, casting to Printer proxy\n");
 	            
 	            Demo.PrinterPrx printer = Demo.PrinterPrxHelper.checkedCast(base);

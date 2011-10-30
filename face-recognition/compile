@@ -1,0 +1,2 @@
+#!/bin/bash
+g++ -lcv -lhighgui -lcvaux -w src/OnlineFaceRec.cpp -o face_recognition
