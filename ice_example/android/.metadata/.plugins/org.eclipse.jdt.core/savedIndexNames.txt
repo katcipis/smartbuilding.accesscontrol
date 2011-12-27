@@ -1,6 +1,0 @@
-INDEX VERSION 1.126+/home/katz/workspace/smartgrid/ice_example/android/.metadata/.plugins/org.eclipse.jdt.core
-2022582423.index
-4193694456.index
-3525260285.index
-2040064081.index
-1328996958.index
