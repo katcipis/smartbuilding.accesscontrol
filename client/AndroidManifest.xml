@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="br.ufsc.register"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="12" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <service android:name="br.ufsc.cache.CacheCoeherenceService"  
+            android:exported="true" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="br.ufsc.cache.CacheCoeherenceService"></action>
+            </intent-filter>
+        </service>
+
+        <service android:name="br.ufsc.identification.RFIDAcquirerService"  
+            android:exported="true" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="br.ufsc.identification.RFIDAcquirerService"></action>
+            </intent-filter>
+        </service>
+        
+        <activity android:name=".RegisterClientActivity"
+                  android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="br.ufsc.identification.AccessGrantedActivity"
+                  android:label="@string/access_control">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="br.ufsc.identification.AccessDeniedActivity"
+                  android:label="@string/access_control">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, RegisterClientActivity!</string>
+    <string name="app_name">RegisterClient</string>
+    <string name="log_label">Log:</string>
+    <string name="server_ip">Server IP:</string>
+    <string name="server_port">Server Port:</string>
+    <string name="register">Register</string>
+    <string name="default_ip">150.162.62.133</string>
+    <string name="default_port">7777</string>
+    <string name="room_label">Room:</string>
+    <string name="allowed_persons_str">Allowed Persons:</string>
+    <string name="default_room">500</string>
+    <string name="load_cache_str">Load cache</string>
+    <string name="flush_cache_str">Flush cache</string>
+    <string name="flush_log_str">Flush log</string>
+    <string name="cache_service_started">&quot;cache server not started&quot;</string>
+    <string name="welcome_message">Access Granted - Welcome </string>
+    <string name="not_welcome">Access Denied - We are calling the police !!!!</string>
+    <string name="access_control">&quot;Access Control&quot;</string>
+</resources>

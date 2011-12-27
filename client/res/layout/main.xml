@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout1" android:layout_width="match_parent">
+        <TextView android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/server_ip"></TextView>
+        <EditText android:layout_weight="1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/server_ip" android:text="@string/default_ip"></EditText>
+        <TextView android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/server_port"></TextView>
+        <EditText android:layout_weight="1" android:layout_height="wrap_content" android:id="@+id/server_port" android:text="@string/default_port" android:layout_width="wrap_content"></EditText>
+        <TextView android:id="@+id/textView3" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/room_label"></TextView>
+        <EditText android:layout_weight="1" android:layout_height="wrap_content" android:id="@+id/room" android:text="@string/default_room" android:layout_width="wrap_content"></EditText>
+        <Button android:id="@+id/register" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/register"></Button>
+    </LinearLayout>
+    <LinearLayout android:layout_height="wrap_content" android:id="@+id/linearLayout2" android:layout_width="match_parent">
+        <Button android:text="@string/load_cache_str" android:layout_height="wrap_content" android:id="@+id/load_cache" android:layout_width="wrap_content"></Button>
+        <Button android:text="@string/flush_cache_str" android:layout_height="wrap_content" android:id="@+id/flush_cache" android:layout_width="wrap_content"></Button>
+        <Button android:text="@string/flush_log_str" android:layout_height="wrap_content" android:id="@+id/flush_log" android:layout_width="wrap_content"></Button>
+    </LinearLayout>
+    <TextView android:id="@+id/textView4" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/allowed_persons_str"></TextView>
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:id="@+id/allowed_persons">
+        <requestFocus></requestFocus>
+    </EditText>
+    <TextView android:id="@+id/textView5" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/log_label"></TextView>
+    <EditText android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textMultiLine" android:id="@+id/log"></EditText>
+</LinearLayout>
